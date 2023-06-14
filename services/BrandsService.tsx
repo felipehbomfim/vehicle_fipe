@@ -11,7 +11,7 @@ const createFipeMarcasTable = (): void => {
   if (db) {
     db.transaction((tx) => {
       tx.executeSql(
-        'CREATE TABLE IF NOT EXISTS fipe_marcas (id INTEGER PRIMARY KEY AUTOINCREMENT, codigo INTEGER UNIQUE, nome TEXT UNIQUE)',
+        'CREATE TABLE IF NOT EXISTS fipe_marcas (id INTEGER PRIMARY KEY AUTOINCREMENT, codigo INTEGER UNIQUE, nome TEXT)',
         [],
         () => {
           console.log('Tabela fipe_marcas criada com sucesso!');
