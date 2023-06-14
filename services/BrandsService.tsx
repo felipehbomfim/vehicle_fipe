@@ -52,6 +52,7 @@ const fetchMarcasFromDatabase = () => {
 };
 
 const addMarcaWithoutCodigoToDataBase = async (nome) => {
+  createFipeMarcasTable();
   const db = openDatabase();
 
   db.transaction((tx) => {
@@ -71,6 +72,7 @@ const addMarcaWithoutCodigoToDataBase = async (nome) => {
 };
 
 const insertMarcasToDatabase = async (data) => {
+  createFipeMarcasTable();
   const db = openDatabase();
   db.transaction((tx) => {
     data.forEach((item) => {
